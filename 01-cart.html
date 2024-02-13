@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="" style="margin-top: 30px">
+      <!-- adding to card -->
+      <p>Adding To cart</p>
+      <button
+        onclick="
+        console.log(`Cart Quantity ${cartQuantity}`);"
+      >
+        Show Quantity
+      </button>
+
+      <button
+        onclick="
+        cartQuantity++
+        console.log(`Cart Quantity ${cartQuantity}`); "
+      >
+        Add to Cart
+      </button>
+
+      <button
+        onclick="cartQuantity=+2
+      console.log(`Cart Quantity ${cartQuantity}`);
+       "
+      >
+        +2
+      </button>
+
+      <button
+        onclick="cartQuantity=+3
+      console.log(`Cart Quantity ${cartQuantity}`);
+      "
+      >
+        +3
+      </button>
+
+      <button
+        onclick="cartQuantity = 0;
+      console.log('Cart Was Reset');
+      console.log(`Cart Quantity ${cartQuantity}`);
+      "
+      >
+        Rest cart
+      </button>
+    </div>
+
+    <script>
+      let cartQuantity = 0;
+      cartQuantity = 0;
+    </script>
+  </body>
+</html>

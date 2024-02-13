@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Lession</title>
+    <style>
+      .js-subcribe {
+        padding: 10px 16px;
+        background-color: black;
+        border-radius: 12px;
+        color: white;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .js-subcribed {
+        background-color: rgb(206, 204, 204);
+        color: black;
+        font-weight: bold;
+      }
+      .js-cost-input {
+        padding: 10px 16px;
+        outline: none;
+      }
+      .js-button {
+        font-weight: bold;
+        padding: 12px 16px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+
+    <button class="js-subcribe" onclick="Subscribe()">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+
+    <input
+      class="js-cost-input"
+      type="text"
+      placeholder="score of order"
+      onkeydown="
+      enterKeyEvent(event) ;
+    "
+    />
+
+    <button class="js-button" onclick="calculateTotal() ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+      function enterKeyEvent(event) {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let cost = Number(inputElement.value);
+        if (cost < 40) {
+          cost += 10;
+        } else {
+          cost;
+        }
+        document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
+      }
+
+      function Subscribe() {
+        const butonSubn = document.querySelector(".js-subcribe");
+        if (butonSubn.innerText === "Subscribe") {
+          butonSubn.innerHTML = "Subscribed";
+          butonSubn.classList.add("js-subcribed");
+        } else {
+          butonSubn.innerHTML = "Subscribe";
+          butonSubn.classList.remove("js-subcribed");
+        }
+      }
+    </script>
+  </body>
+</html>

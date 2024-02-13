@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amusement Park</title>
+  </head>
+  <body>
+    <div class="" style="margin-top: 30px">
+      <!-- adding to card -->
+      <p>Adding To cart</p>
+      <button
+        onclick="
+        console.log(`Cart Quantity ${cartQuantity}`);
+        "
+      >
+        Show Quantity
+      </button>
+
+      <button
+        onclick="
+        cartQuantity++
+        console.log(`Cart Quantity ${cartQuantity}`); 
+        "
+      >
+        Add to Cart
+      </button>
+
+      <button
+        onclick="cartQuantity+=2
+      console.log(`Cart Quantity ${cartQuantity}`);
+      cartStatus();
+       "
+      >
+        +2
+      </button>
+
+      <button
+        onclick="cartQuantity+=3
+      console.log(`Cart Quantity ${cartQuantity}`);
+      cartStatus();
+      "
+      >
+        +3
+      </button>
+
+      <button
+        onclick="cartQuantity-=2
+      console.log(`Cart Quantity ${cartQuantity}`);
+      cartStatus();
+       "
+      >
+        -2
+      </button>
+
+      <button
+        onclick="cartQuantity-=3
+    console.log(`Cart Quantity ${cartQuantity}`);
+    cartStatus();
+    "
+      >
+        -3
+      </button>
+
+      <button
+        onclick="cartQuantity = 0;
+      console.log('Cart Was Reset');
+      console.log(`Cart Quantity ${cartQuantity}`);
+      cartFull()
+      "
+      >
+        Rest cart
+      </button>
+    </div>
+
+    <script>
+      let cartQuantity = 0;
+      cartQuantity = 0;
+
+      function cartStatus() {
+        if (cartQuantity <= 0) {
+          alert("Not Enough Item in the Cart");
+        } else if (cartQuantity >= 10) {
+          alert("Cart Full");
+        }
+      }
+      // let age = 65;
+      // const isHoliday = "true";
+
+      // if (age === 6 && isHoliday !== "true") {
+      //   console.log("Discont");
+      // } else {
+      //   console.log("No Discount");
+      // }
+    </script>
+  </body>
+</html>

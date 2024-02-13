@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <!-- head and tail -->
+    <p>Click on me</p>
+    <button class="head" onclick="handleStatus()">Heads</button>
+    <button class="tail" onclick="handleTail()">Tails</button>
+    <p class="js-result"></p>
+
+    <hr />
+    <p>Enter your name</p>
+    <!-- input  -->
+    <input
+      type="text"
+      placeholder="enter your name"
+      class="inputText"
+      onkeydown="handleEnter(event)"
+    />
+    <button onclick="submitName()">Submit</button>
+    <p class="output"></p>
+
+    <hr />
+    <!-- Amazon calculator -->
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+
+    <input
+      class="js-cost-input"
+      type="text"
+      placeholder="score of order"
+      onkeydown="
+      enterKeyEvent(event) ;
+    "
+    />
+
+    <button onclick="calculateTotal() ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <hr />
+    <!-- typing -->
+    <p>Type inside</p>
+    <input type="text" class="typing" onkeyup=" handleTyping(event)" />
+    <p class="js-typing"></p>
+
+    <script>
+      //typing
+      function handleTyping(event) {
+        let inputTyping = document.querySelector(".typing").value;
+        console.log(inputTyping);
+        document.querySelector(".js-typing").innerText = `${inputTyping}`;
+      }
+
+      //Amazon calculator
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let cost = Number(inputElement.value);
+        let costs = Math.round(cost);
+        if (costs < 40) {
+          costs += 10;
+        } else {
+          costs;
+        }
+        document.querySelector(".js-total-cost").innerHTML = `$${costs}`;
+      }
+
+      //enter your name
+      function handleEnter(event) {
+        const texted = document.querySelector(".inputText").value;
+        if (event.key === "Enter") {
+          document.querySelector(
+            ".output"
+          ).innerHTML = `Your name is: ${texted}`;
+        }
+      }
+      function submitName() {
+        const texted = document.querySelector(".inputText").value;
+        document.querySelector(".output").innerHTML = `Your name is: ${texted}`;
+      }
+
+      //......head and tail
+      function handleStatus() {
+        const headStatus = document.querySelector(".head");
+
+        if (headStatus.innerHTML === "Heads") {
+          const yes = (document.innerHTML = "heads");
+          document.querySelector(".js-result").innerHTML = `You chose: ${yes}`;
+        }
+      }
+      function handleTail() {
+        const tailStatus = document.querySelector(".tail");
+        if (tailStatus.innerHTML === "Tails") {
+          const ys = (document.innerHTML = "tails");
+          document.querySelector(".js-result").innerHTML = `You chose: ${ys}`;
+        }
+      }
+      // document.querySelector(".first");
+      // document.querySelector(".second").innerHTML = "done";
+    </script>
+  </body>
+</html>
